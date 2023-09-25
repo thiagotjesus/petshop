@@ -2,14 +2,13 @@ package br.com.tech4me.petshop.model;
 
 import java.time.LocalDate;
 
-import org.hibernate.annotations.ManyToAny;
-
+import br.com.tech4me.petshop.shared.ServicoCompletoDTO;
+import br.com.tech4me.petshop.shared.ServicoDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -62,5 +61,14 @@ public class Servico {
     }
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+    public static Servico fromServicoDTO(ServicoDTO servicoDto){
+        var servico = new Servico();
+        servico.setId(servicoDto.id());
+        servico.setTipo(servicoDto.tipo());
+        servico.setAgendamento(servicoDto.agendamento());
+        servico.setValor(servicoDto.valor());
+        servico.setObservacoes(servicoDto.observacoes());
+        return servico;
     }
 }

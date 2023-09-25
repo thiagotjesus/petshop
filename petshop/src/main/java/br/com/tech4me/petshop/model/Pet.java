@@ -1,5 +1,6 @@
 package br.com.tech4me.petshop.model;
 
+import br.com.tech4me.petshop.shared.PetDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -39,5 +40,14 @@ public class Pet {
     }
     public void setIdade(Integer idade) {
         this.idade = idade;
+    }
+
+        public static Pet from(PetDTO petDto){
+        Pet pet = new Pet();
+        pet.setId(petDto.id());
+        pet.setNome(petDto.nome());
+        pet.setRaca(petDto.raca());     
+        pet.setIdade(petDto.idade());
+        return pet;
     }
 }

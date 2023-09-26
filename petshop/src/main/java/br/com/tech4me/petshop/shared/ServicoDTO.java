@@ -1,5 +1,6 @@
 package br.com.tech4me.petshop.shared;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 
 import br.com.tech4me.petshop.model.Servico;
@@ -23,3 +24,8 @@ public record ServicoDTO(
     }
 }
 
+=======
+public class ServicoDTO {
+
+}
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542

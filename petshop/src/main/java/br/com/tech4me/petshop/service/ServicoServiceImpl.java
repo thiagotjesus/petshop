@@ -10,7 +10,10 @@ import br.com.tech4me.petshop.model.Pet;
 import br.com.tech4me.petshop.model.Servico;
 import br.com.tech4me.petshop.repository.ServicoRepository;
 import br.com.tech4me.petshop.shared.PetDTO;
+<<<<<<< HEAD
 import br.com.tech4me.petshop.shared.ServicoCompletoDTO;
+=======
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542
 import br.com.tech4me.petshop.shared.ServicoDTO;
 
 @Service
@@ -28,12 +31,20 @@ public class ServicoServiceImpl implements ServicoService{
     }
 
     @Override
+<<<<<<< HEAD
     public ServicoCompletoDTO cadastrarServico(ServicoDTO servicoDto) {
+=======
+    public ServicoDTO cadastrarServico(ServicoDTO servicoDto) {
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542
         Servico servico = Servico.fromServicoDTO(servicoDto);
         PetDTO petDto = petClient.obterPetPorId(servicoDto.petId());
         servico.setPet(Pet.from(petDto));
         repositorio.save(servico);
+<<<<<<< HEAD
         return ServicoCompletoDTO.from(servico);
+=======
+        return ServicoDTO.from(servico);
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542
     }
 
     

@@ -3,6 +3,10 @@ package br.com.tech4me.petshop.model;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+<<<<<<< HEAD
+=======
+import br.com.tech4me.petshop.shared.ServicoCompletoDTO;
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542
 import br.com.tech4me.petshop.shared.ServicoDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -63,11 +67,18 @@ public class Servico {
         this.pet = pet;
     }
     public static Servico fromServicoDTO(ServicoDTO servicoDto){
+<<<<<<< HEAD
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         var servico = new Servico();
         servico.setId(servicoDto.id());
         servico.setTipo(servicoDto.tipo());
         servico.setAgendamento(LocalDate.parse(servicoDto.agendamento(), dtf));
+=======
+        var servico = new Servico();
+        servico.setId(servicoDto.id());
+        servico.setTipo(servicoDto.tipo());
+        servico.setAgendamento(servicoDto.agendamento());
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542
         servico.setValor(servicoDto.valor());
         servico.setObservacoes(servicoDto.observacoes());
         return servico;

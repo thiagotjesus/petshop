@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"folders": [
 		{
 			"path": "cadastro"
@@ -13,4 +14,7 @@
 			"path": "petshop"
 		}
 	]
+=======
+	"folders": []
+>>>>>>> 9054204eb7766ca8daf4f9fee20f570bde968542
 }

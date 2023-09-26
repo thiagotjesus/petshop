@@ -1,15 +1,14 @@
 package br.com.tech4me.petshop.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-import org.hibernate.annotations.ManyToAny;
-
+import br.com.tech4me.petshop.shared.ServicoDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -62,5 +61,15 @@ public class Servico {
     }
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+    public static Servico fromServicoDTO(ServicoDTO servicoDto){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        var servico = new Servico();
+        servico.setId(servicoDto.id());
+        servico.setTipo(servicoDto.tipo());
+        servico.setAgendamento(LocalDate.parse(servicoDto.agendamento(), dtf));
+        servico.setValor(servicoDto.valor());
+        servico.setObservacoes(servicoDto.observacoes());
+        return servico;
     }
 }

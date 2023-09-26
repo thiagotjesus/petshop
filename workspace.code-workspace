@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "cadastro"
+		},
+		{
+			"path": "discovery-server"
+		},
+		{
+			"path": "gateway"
+		},
+		{
+			"path": "petshop"
+		}
+	]
+}
